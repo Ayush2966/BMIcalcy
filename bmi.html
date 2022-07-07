@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(48, 46, 46);
+            padding-top: 5vh;
+        }
+        
+        .container {
+            width: 1000px;
+            background-color: rgb(22, 21, 21);
+            border-radius: 15px;
+            padding: 25px 10px;
+            box-shadow: 0 0 25px rgb(80, 79, 79);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header text-center text-black">
+                <b><U>𝐁𝐌𝐈 𝐂𝐀𝐋𝐂𝐔𝐋𝐀𝐓𝐎𝐑</U></b>
+            </div>
+        </div>
+        <div class="card-body">
+            <form class="w-50 m-auto" onsubmit="return false">
+                <div class="form-group">
+                    <label style="color:white">Weight:</label>
+                    <input type="number" name="" placeholder="weight in kg" id="weight" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label style="color:white">Height:</label>
+                    <input type="text" name="" placeholder="Height in feet" id="height" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label style="color:white">BMI Value:</label>
+                    <input type="number" name="" id="bmivalue" class="form-control" placeholder="BMI Value">
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-danger" onclick="getbmivalue()"> Calculate BMI Value</button>
+
+                </div>
+            </form>
+
+        </div>
+        <div class=" card-footer text-center bg-light" style="color:rgb(15, 14, 14);"> A healthy BMI ranges 19 and 25!!</div>
+    </div>
+
+    </div>
+</body>
+<script type="text/javascript ">
+    function getbmivalue() {
+        var weight = document.getElementById('weight').value;
+        var height = document.getElementById('height').value;
+        height = height * 12;
+        height = height * 0.025; //height in meter
+        var newbmivalue = weight / (height * height);
+        newbmivalue = Math.round(newbmivalue);
+
+        document.getElementById('bmivalue').value = newbmivalue;
+    }
+</script>
+
+
+</html>
